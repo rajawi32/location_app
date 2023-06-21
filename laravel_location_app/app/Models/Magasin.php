@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Magasin extends Model
 {
     use HasFactory;
+    protected $fillable = ['surface','loyer_mensuel'];
 }
