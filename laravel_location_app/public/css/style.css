@@ -1,30 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+:root {
+    --color-item-1: #ffcc41;
+    --color-item-2: #445cb4;
+    --color-item-3: #f28665;
+    --color-item-4: #f4f6f7;
+}
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto',sans-serif;
+    font-family: "Roboto", sans-serif;
 }
-#app nav{
+#app nav.app-nav {
     background: #0097e6 !important;
 }
-nav .user-name{
+.pagination nav{
+    background: #b6e5ff;
+}
+nav .user-name {
     text-transform: uppercase;
     color: #fff !important;
 }
-.content #sidebare{
+.content #sidebare {
     flex: 1;
     background: #0097e6;
     height: calc(100vh - 87px);
 }
-#sidebare .nav-link{
+#sidebare .nav-link {
     text-transform: uppercase;
     font-size: 17px;
     font-weight: 400;
     border-bottom: 1px solid #ccc;
     padding-left: 20px;
 }
-#sidebare .nav-link:focus{
+#sidebare .nav-link:focus {
     background: #0384ca;
 }
 .content main {
@@ -35,7 +44,7 @@ nav .user-name{
     height: calc(100vh - 87px);
     background: #b6e5ff;
 }
-.content main .search-box{
+.content main .search-box {
     width: 500px;
     display: flex;
     justify-content: center;
@@ -46,13 +55,68 @@ nav .user-name{
     border-radius: 15px;
     margin-bottom: 20px;
 }
-.search-box .btn{
+.search-box .btn {
     background: #005c73;
     color: #fff;
 }
-.search-box .btn:hover{
+.search-box .btn:hover {
     background: #053d4a;
     color: #fff;
 }
+.home-page-container .item {
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.item:hover{
+    animation: itemAnimation 1s linear alternate;
+}
+.item-1 {
+    background: var(--color-item-1);
+}
+.item-2 {
+    background: var(--color-item-2);
+}
+.item-3 {
+    background: var(--color-item-3);
+}
+.item-4 {
+    background: var(--color-item-4);
+}
+.item .icon{
+    font-size: 40px;
+}
 
+@keyframes itemAnimation {
+  0%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.ajout-btn{
+    background: #f28665;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 12px #f2866558;
+}
+.ajout-btn:hover{
+    background: #e6643d;
+}
 
+.container-form{
+    height: calc(100vh - 87px);
+}
+.container-form form{
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+.container-form form h1,.container-form form button{
+    text-transform: uppercase;
+}

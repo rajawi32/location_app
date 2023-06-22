@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MagasinController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -23,10 +24,22 @@ Route::prefix('/users')->group(function () {
         });
     });
 });
+Route::prefix('/magasins')->group(function () {
+    Route::controller(MagasinController::class)->group(function () {
+        Route::name('magasins.')->group(function () {
+            Route::get('', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('', 'store')->name('store');
+            Route::get('/{id}', 'edit')->name('edit');
+            Route::put('/{id}', 'update')->name('update');
+            Route::delete('/{id}', 'destroy')->name('destroy');
+        });
+    });
+});
 
-Route::get('/magasins', function () {
-    return view('magasins.index');
-})->name('magasins.index');
+
+
+
 Route::get('/locataires', function () {
     return view('locataires.index');
 })->name('locataires.index');
